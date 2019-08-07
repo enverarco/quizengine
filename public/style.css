@@ -1,0 +1,69 @@
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+body {
+	font-family: 'Nunito Sans',sans-serif;
+	font-weight: 700;
+	background-color: #6fba9d;
+	color: #f7f7f8;
+}
+/*--------------------------------------------------------------
+# Nav Bar
+--------------------------------------------------------------*/
+nav.navbar.transparent {
+	background-color:rgba(0,0,0,0);
+}
+
+.navbar-nav li:hover>.dropdown-menu {
+	display: block;
+}
+
+.uppercase{
+	text-transform: uppercase;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	color: #00bd9d;
+}
+
+.navbar-custom {
+	background-color: rgba(13, 11, 11, 0.3);
+}
+
+.nav-image{
+	width:40px;
+}
+
+.navbar-brand {
+  margin-right: 0;
+}
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+
+.container-tiny {
+	width: 25%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
