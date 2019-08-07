@@ -81,6 +81,12 @@ li a:hover {
 	font-size: 18px;
 }
 
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
 .top-center {
   position: absolute;
   top: 16px;
@@ -105,4 +111,16 @@ li a:hover {
  -webkit-box-shadow:  0 2px 4px rgba(105, 130, 156, 0.22);
  box-shadow: 0 2px 4px rgba(105, 130, 156, 0.22);*/
  transform: scale(1.1);
+}
+
+.no-display{
+	display: none;
+}
+
+/*--------------------------------------------------------------
+# Radio Buttons
+--------------------------------------------------------------*/
+
+input[type=checkbox] {
+	visibility: hidden;
 }
