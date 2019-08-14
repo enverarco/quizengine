@@ -1,0 +1,126 @@
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+body {
+	font-family: 'Nunito Sans',sans-serif;
+	font-weight: 700;
+	background-color: #000036;
+	color: #f7f7f8;
+}
+/*--------------------------------------------------------------
+# Nav Bar
+--------------------------------------------------------------*/
+nav.navbar.transparent {
+	background-color:rgba(0,0,0,0);
+}
+
+.navbar-nav li:hover>.dropdown-menu {
+	display: block;
+}
+
+.uppercase{
+	text-transform: uppercase;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	color: #000036;
+}
+
+.navbar-custom {
+	background-color: rgba(13, 11, 11, 0.3);
+}
+
+.nav-image{
+	width:40px;
+}
+
+.navbar-brand {
+  margin-right: 0;
+}
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  background-color: #000036;
+}
+
+.container-tiny {
+	width: 25%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+	font-size: 18px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.top-center {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-grow {
+  transition: all .2s ease-in-out;
+}
+
+.img-grow:hover{
+	/*
+ -moz-box-shadow:     0 2px 4px rgba(105, 130, 156, 0.22);
+ -webkit-box-shadow:  0 2px 4px rgba(105, 130, 156, 0.22);
+ box-shadow: 0 2px 4px rgba(105, 130, 156, 0.22);*/
+ transform: scale(1.1);
+}
+
+.no-display{
+	display: none;
+}
+
+/*--------------------------------------------------------------
+# Radio Buttons
+--------------------------------------------------------------*/
+
+input[type=checkbox] {
+	visibility: hidden;
+}
