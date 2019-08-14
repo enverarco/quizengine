@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <h1><%= question.title %></h1>
+
+    for(var i=0; i<question.answers.length; i++) {
+      <p>
+        question.answer[i].title
+      </p>
+    }
+
+  </body>
+</html>
