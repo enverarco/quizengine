@@ -4,60 +4,19 @@
     <title>Home | Quiz Engine | Mastered &amp;</title>
     <% include ../partials/head %>
   </head>
-      <body>
-      <div class="container-fluid text-center">
-        <div class="jumbotron">
-          <h1>This is a Quiz Engine Template</h1>
-        </div>
-        <h2>Question 1 Title</h2>
-        <p>Description of question 1</p>
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-xs-4 thumb img-grow">
-          <a class="thumbnail" href="#">
-              <input type="checkbox" id="cb3" />
-              <label for="cb3"><img class="img-responsive" src="http://placehold.it/400x300" alt="" height="300" width="400"></label>
-                <div class="top-center text-dark">Answer 1 Text</div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-4 col-xs-4 thumb img-grow">
-          <a class="thumbnail" href="#">
-              <input type="checkbox" id="cb3" />
-              <label for="cb3"><img class="img-responsive" src="http://placehold.it/400x300" alt="" height="300" width="400"></label>
-                <div class="top-center text-dark">Answer 2 Text</div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-4 col-xs-4 thumb img-grow">
-            <a class="thumbnail" href="#">
-                <input type="checkbox" id="cb3" />
-                <label for="cb3"><img class="img-responsive" src="http://placehold.it/400x300" alt="" height="300" width="400"></label>
-                <div class="top-center text-dark">Answer 3 Text</div>
-            </a>
-        </div>
-      </div>
-    </div>
-      <div class = 'top-right'>
-        <p>
-          Quote: €0
-        </p>
-      </div>
+  <body>
+  <div class="text-center huge-top-buffer">
+    <div class ="container-fluid">
+        <img class="fadeInUp" src="../images/icons/code.svg" alt="How much does a website cost?">
+        <h1>How Much Does a Website Cost</h1>
+        <p>Have you ever wondered how much it would cost to make a website? This handy app cost calculator will help you: Find out how much your website will cost in under a minute!</p>
+        <button id ="startBtn" type="button" class="btn btn-lg btn--light btnFillup anglebg">Get Started</button>
+     </div>
+  </div>
 
-      <div class = 'top-left'>
-        <p>
-          < - Previous Question
-        </p>
-      </div>
-
-      <div class = 'bottom-right'>
-        <p>
-          Page: 1 out of 10.
-        </p>
-      </div>
-
-      <script src="../javascripts/script.js"></script>
+  <script src="../javascripts/script.js"></script>
       </body>
-
-
-</html>
+      </html>
 
   <!--
 
@@ -85,6 +44,27 @@ for the legnth of answers available render those answers. for loop.
   }
 
 get the url
-and then increment the url 
+and then increment the url
+
+
+function redirecttonextQuestion(questionNumber){
+  if(questionNumber == 0){
+    window.open("http://localhost:7000/question/3");
+    console.log("question1");
+  }
+  else if(questionNumber == 1){
+      window.open("http://localhost:7000/question/4");
+      console.log("question2");
+  }
+  else if(questionNumber == 2){
+      window.open("http://localhost:7000/question/5");
+      console.log("question3");
+  }
+  else if(questionNumber == 4){
+      window.open("http://localhost:7000/question/6");
+      console.log("question4");
+  }
+}
+
 
   -->

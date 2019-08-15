@@ -3,40 +3,37 @@
 <head>
   <% include ../partials/head %>
 </head>
-<body>
-  <div class="container-fluid text-center">
-    <div class="jumbotron">
-      <h1>This is a Quiz Engine Template</h1>
-    </div>
-    <h2><%= question.title %></h2>
+<body onload="displayQuote()">
+  <div class="container-fluid text-center huge-top-buffer">
+    <h1><%= question.title %></h1>
     <p><%= question.description %></p>
 
     <div class="row">
       <%   for(var i=0; i< question.answers.length; i++) { %>
         <div class="col-lg-4 col-md-4 col-xs-4 thumb img-grow">
-          <a class="thumbnail" id="forward" href="<%= question.href %>">
+          <a onclick="increaseQuote()" class="thumbnail" id="forward" href="<%= question.href %>">
             <input type="checkbox" id="cb3" />
-            <img class="img-responsive top-buffer" src="<%= question.answers[i].imageURL %>"  alt="" height="300" width="400">
-            <div class="top-center text-dark"><%= question.answers[i].title %></div>
+            <img class="img-responsive top-buffer img-circle" src="<%= question.answers[i].imageURL %>"  alt="" height="150" width="200">
           </a>
+          <div class="bottom-center"><%= question.answers[i].title %></div>
         </div>
         <%   } %>
       </div>
     </div>
-    <div class = 'top-right'>
+    <div id = "quote" class = 'top-right'>
       <p>
         Quote: €0
       </p>
     </div>
     <div class = 'top-left'>
-      <p>
+      <a onclick="goBack()" class="giveCursor">
         < - Previous Question
-      </p>
+      </a>
     </div>
 
     <div class = 'bottom-right'>
       <p>
-        Page: 1 out of 10.
+        Page: <%= question.pageNo %> out of 10.
       </p>
     </div>
     <script src="../javascripts/script.js"></script>

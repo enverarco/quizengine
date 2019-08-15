@@ -16,26 +16,26 @@ var router = express.Router();
 //   ...
 // ]
 
-
 var questions = [{
-    title: "Question 1",
-    description: "This is the description for question 1",
+    title: "How many pages will you need?",
+    description: "ie. how it works, contact us, team, about, press, terms, FAQ, hiring",
     href: "http://localhost:7000/question/2",
+    pageNo: "1",
     answers : [
       {
         title: "Answer 1",
-        value: "",
-        imageURL: "http://placehold.it/400x300",
+        value: "200",
+        imageURL: "../images/circleicons/cloudy.svg",
       },
       {
         title: "Answer 2",
-        value: "",
-        imageURL: "http://placehold.it/400x300",
+        value: "400",
+        imageURL: "../images/circleicons/compass.svg",
       },
       {
         title: "Answer 3",
-        value: "",
-        imageURL: "http://placehold.it/400x300",
+        value: "300",
+        imageURL: "../images/circleicons/crown.svg",
       }
     ]
   },
@@ -43,16 +43,17 @@ var questions = [{
       title: "Question 2",
       description: "This is the description for question 2",
       href: "http://localhost:7000/question/3",
+      pageNo: "2",
       answers : [
         {
           title: "Answer 1",
           value: "",
-          imageURL: "http://placehold.it/400x300",
+          imageURL: "../images/circleicons/devices.svg",
         },
         {
           title: "Answer 2",
           value: "",
-          imageURL: "http://placehold.it/400x300",
+          imageURL: "../images/circleicons/chat.svg",
         }
 
       ]
@@ -61,26 +62,27 @@ var questions = [{
         title: "Question 3",
         description: "This is the description for question 3",
         href: "http://localhost:7000/question/4",
+        pageNo: "3",
         answers : [
           {
             title: "Answer 1",
             value: "",
-            imageURL: "http://placehold.it/400x300",
+            imageURL: "../images/circleicons/calendar.svg",
           },
           {
             title: "Answer 2",
             value: "",
-            imageURL: "http://placehold.it/400x300",
+            imageURL: "../images/circleicons/flask.svg",
           },
           {
             title: "Answer 3",
             value: "",
-            imageURL: "http://placehold.it/400x300",
+            imageURL: "../images/circleicons/idea.svg",
           },
           {
             title: "Answer 4",
             value: "",
-            imageURL: "http://placehold.it/400x300",
+            imageURL: "../images/circleicons/diamond.svg",
           }
 
         ]
@@ -89,6 +91,7 @@ var questions = [{
           title: "Question 4",
           description: "This is the description for question 4",
           href: "http://localhost:7000/question/5",
+          pageNo: "4",
           answers : [
             {
               title: "Answer 1",
@@ -122,6 +125,7 @@ var questions = [{
             title: "Question 5",
             description: "This is the description for question 5",
             href: "http://localhost:7000/question/6",
+            pageNo: "5",
             answers : [
               {
                 title: "Answer 1",
@@ -160,6 +164,7 @@ var questions = [{
               title: "Question 6",
               description: "This is the description for question 6",
               href: "http://localhost:7000/results",
+              pageNo: "6",
               answers : [
                 {
                   title: "Answer 1",
@@ -184,7 +189,7 @@ var questions = [{
                 {
                   title: "Answer 5",
                   value: "",
-                  imageURL: "http://placehold.it/400x300",
+                  imageURL: "../images/icons/code.svg",
                 }
 
               ]
@@ -197,24 +202,5 @@ var questions = [{
 router.get('/:questionId', function(req, res, next) {
   res.render('pages/question', {question: questions[req.params.questionId - 1]});
 });
-
-function redirecttonextQuestion(questionNumber){
-  if(questionNumber == 0){
-    window.open("http://localhost:7000/question/3");
-    console.log("question1");
-  }
-  else if(questionNumber == 1){
-      window.open("http://localhost:7000/question/4");
-      console.log("question2");
-  }
-  else if(questionNumber == 2){
-      window.open("http://localhost:7000/question/5");
-      console.log("question3");
-  }
-  else if(questionNumber == 4){
-      window.open("http://localhost:7000/question/6");
-      console.log("question4");
-  }
-}
 
 module.exports = router;
