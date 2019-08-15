@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <% include ../partials/head %>
-  </head>
-  <body>
-    <h1><%= question.title %></h1>
+<head>
+  <% include ../partials/head %>
+</head>
+<body>
+  <div class="container-fluid text-center">
+    <div class="jumbotron">
+      <h1>This is a Quiz Engine Template</h1>
+    </div>
+    <h2><%= question.title %></h2>
+    <p><%= question.description %></p>
 
-    for(var i=0; i<question.answers.length; i++) {
+    <div class="row">
+      <%   for(var i=0; i< question.answers.length; i++) { %>
+        <div class="col-lg-4 col-md-4 col-xs-4 thumb img-grow">
+          <a class="thumbnail" id="forward" href="<%= question.href %>">
+            <input type="checkbox" id="cb3" />
+            <img class="img-responsive top-buffer" src="<%= question.answers[i].imageURL %>"  alt="" height="300" width="400">
+            <div class="top-center text-dark"><%= question.answers[i].title %></div>
+          </a>
+        </div>
+        <%   } %>
+      </div>
+    </div>
+    <div class = 'top-right'>
       <p>
-        question.answer[i].title
+        Quote: €0
       </p>
-    }
+    </div>
+    <div class = 'top-left'>
+      <p>
+        < - Previous Question
+      </p>
+    </div>
 
+    <div class = 'bottom-right'>
+      <p>
+        Page: 1 out of 10.
+      </p>
+    </div>
+    <script src="../javascripts/script.js"></script>
   </body>
-</html>
+  </html>
