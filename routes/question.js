@@ -47,12 +47,12 @@ var questions = [{
       answers : [
         {
           title: "Answer 1",
-          value: "",
-          imageURL: "../images/circleicons/devices.svg",
+          value: "300",
+          imageURL: "../images/web/browser-10.svg",
         },
         {
           title: "Answer 2",
-          value: "",
+          value: "500",
           imageURL: "../images/circleicons/chat.svg",
         }
 
@@ -66,22 +66,22 @@ var questions = [{
         answers : [
           {
             title: "Answer 1",
-            value: "",
+            value: "400",
             imageURL: "../images/circleicons/calendar.svg",
           },
           {
             title: "Answer 2",
-            value: "",
+            value: "200",
             imageURL: "../images/circleicons/flask.svg",
           },
           {
             title: "Answer 3",
-            value: "",
+            value: "300",
             imageURL: "../images/circleicons/idea.svg",
           },
           {
             title: "Answer 4",
-            value: "",
+            value: "200",
             imageURL: "../images/circleicons/diamond.svg",
           }
 
@@ -95,28 +95,28 @@ var questions = [{
           answers : [
             {
               title: "Answer 1",
-              value: "",
-              imageURL: "http://placehold.it/400x300",
+              value: "500",
+              imageURL: "../images/web/home.svg",
             },
             {
               title: "Answer 2",
-              value: "",
-              imageURL: "http://placehold.it/400x300",
+              value: "100",
+              imageURL: "../images/web/flag.svg",
             },
             {
               title: "Answer 3",
-              value: "",
-              imageURL: "http://placehold.it/400x300",
+              value: "200",
+              imageURL: "../images/web/folder.svg",
             },
             {
               title: "Answer 4",
-              value: "",
-              imageURL: "http://placehold.it/400x300",
+              value: "300",
+              imageURL: "../images/web/download.svg",
             },
             {
               title: "Answer 5",
-              value: "",
-              imageURL: "http://placehold.it/400x300",
+              value: "200",
+              imageURL: "../images/web/laptop.svg",
             }
 
           ]
@@ -129,33 +129,33 @@ var questions = [{
             answers : [
               {
                 title: "Answer 1",
-                value: "",
-                imageURL: "http://placehold.it/400x300",
+                value: "200",
+                imageURL: "../images/web/profile.svg",
               },
               {
                 title: "Answer 2",
-                value: "",
-                imageURL: "http://placehold.it/400x300",
+                value: "200",
+                imageURL: "../images/web/profile.svg",
               },
               {
                 title: "Answer 3",
-                value: "",
-                imageURL: "http://placehold.it/400x300",
+                value: "200",
+                imageURL: "../images/web/profile.svg",
               },
               {
                 title: "Answer 4",
-                value: "",
-                imageURL: "http://placehold.it/400x300",
+                value: "200",
+                imageURL: "../images/web/profile.svg",
               },
               {
                 title: "Answer 5",
-                value: "",
-                imageURL: "http://placehold.it/400x300",
+                value: "200",
+                imageURL: "../images/web/profile.svg",
               },
               {
                 title: "Answer 6",
-                value: "",
-                imageURL: "http://placehold.it/400x300",
+                value: "200",
+                imageURL: "../images/web/profile.svg",
               }
 
             ]
@@ -168,28 +168,28 @@ var questions = [{
               answers : [
                 {
                   title: "Answer 1",
-                  value: "",
-                  imageURL: "http://placehold.it/400x300",
+                  value: "200",
+                  imageURL: "../images/web/profile.svg",
                 },
                 {
                   title: "Answer 2",
-                  value: "",
-                  imageURL: "http://placehold.it/400x300",
+                  value: "200",
+                  imageURL: "../images/web/profile.svg",
                 },
                 {
                   title: "Answer 3",
-                  value: "",
-                  imageURL: "http://placehold.it/400x300",
+                  value: "200",
+                  imageURL: "../images/web/profile.svg",
                 },
                 {
                   title: "Answer 4",
-                  value: "",
-                  imageURL: "http://placehold.it/400x300",
+                  value: "200",
+                  imageURL: "../images/web/profile.svg",
                 },
                 {
                   title: "Answer 5",
-                  value: "",
-                  imageURL: "../images/icons/code.svg",
+                  value: "200",
+                  imageURL: "../images/web/profile.svg",
                 }
 
               ]
@@ -202,5 +202,6 @@ var questions = [{
 router.get('/:questionId', function(req, res, next) {
   res.render('pages/question', {question: questions[req.params.questionId - 1]});
 });
+
 
 module.exports = router;

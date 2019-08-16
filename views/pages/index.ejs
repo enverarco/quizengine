@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home | Quiz Engine | Mastered &amp;</title>
-    <% include ../partials/head %>
-  </head>
-  <body>
+<head>
+  <title>Home | Quiz Engine | Mastered &amp;</title>
+  <% include ../partials/head %>
+</head>
+<body>
   <div class="text-center huge-top-buffer">
     <div class ="container-fluid">
-        <img class="fadeInUp" src="../images/icons/code.svg" alt="How much does a website cost?">
-        <h1>How Much Does a Website Cost</h1>
-        <p>Have you ever wondered how much it would cost to make a website? This handy app cost calculator will help you: Find out how much your website will cost in under a minute!</p>
-        <button id ="startBtn" type="button" class="btn btn-lg btn--light btnFillup anglebg">Get Started</button>
-     </div>
+      <img class="fadeInUp" src="../images/icons/code.svg" alt="How much does a website cost?">
+      <h1>How Much Does a Website Cost</h1>
+      <p>Have you ever wondered how much it would cost to make a website? This handy app cost calculator will help you: Find out how much your website will cost in under a minute!</p>
+      <button id ="startBtn" onclick="startQuiz()" type="button" class="btn btn-lg btn--light btnFillup anglebg">Get Started</button>
+    </div>
   </div>
+</body>
+</html>
+<!--
 
-  <script src="../javascripts/script.js"></script>
-      </body>
-      </html>
-
-  <!--
-
-  Quiz Engine
+Quiz Engine
 -------------
 1. Create a question template that has its own unique route,
 It should have a question title and then a further descriptive detail underneath,
@@ -37,34 +34,37 @@ array of questions
 
 for the legnth of answers available render those answers. for loop.
 
- for(var i=0; i<question.answers.length; i++) {
-    <p>
-      question.answer[i].title
-    </p>
-  }
+for(var i=0; i<question.answers.length; i++) {
+<p>
+question.answer[i].title
+</p>
+}
 
 get the url
 and then increment the url
 
 
 function redirecttonextQuestion(questionNumber){
-  if(questionNumber == 0){
-    window.open("http://localhost:7000/question/3");
-    console.log("question1");
-  }
-  else if(questionNumber == 1){
-      window.open("http://localhost:7000/question/4");
-      console.log("question2");
-  }
-  else if(questionNumber == 2){
-      window.open("http://localhost:7000/question/5");
-      console.log("question3");
-  }
-  else if(questionNumber == 4){
-      window.open("http://localhost:7000/question/6");
-      console.log("question4");
-  }
+if(questionNumber == 0){
+window.open("http://localhost:7000/question/3");
+console.log("question1");
+}
+else if(questionNumber == 1){
+window.open("http://localhost:7000/question/4");
+console.log("question2");
+}
+else if(questionNumber == 2){
+window.open("http://localhost:7000/question/5");
+console.log("question3");
+}
+else if(questionNumber == 4){
+window.open("http://localhost:7000/question/6");
+console.log("question4");
+}
 }
 
+if (question.answers.length == 2){
+document.getElementById("answerImage").classList.add("offset-3");
+}
 
-  -->
+-->

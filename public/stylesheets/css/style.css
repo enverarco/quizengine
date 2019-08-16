@@ -64,6 +64,11 @@ li a:hover {
 /*--------------------------------------------------------------
 # Main
 --------------------------------------------------------------*/
+
+.offset-3{
+	margin-left: 25%;
+}
+
 .img-circle {
     border-radius: 50%;
 }
@@ -111,6 +116,7 @@ li a:hover {
   right: 16px;
 }
 
+
 .top-center {
   position: absolute;
   top: 120px;
@@ -119,10 +125,12 @@ li a:hover {
 }
 
 .bottom-center {
-  position: absolute;
-  bottom: -50px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+	/* position: absolute; */
+  /* bottom: -50px; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  text-align: center;
+  width: 100%;
 }
 
 .centered {
@@ -160,6 +168,35 @@ input[type=checkbox] {
 	cursor: pointer;
 }
 
+
+/*--------------------------------------------------------------
+# Results page
+--------------------------------------------------------------*/
+
+.estimate {
+    color: #52aa52;
+}
+
+.theme-dark {
+  color: #FFFFFF; /*#777 */
+  /*background-color: #0d293a75;*/
+	background-color: #0d1f3ad1;
+	padding: 30px 20px 30px 20px;
+}
+
+.form-text-area {
+  background-color: #FFFFFF;
+  border: 1px solid #8F8F8F;
+  border-radius: 2px;
+  width: 90%;
+  margin: 8px;
+  padding: 16px 8px;
+  color: black !important;
+}
+
+.describeApp{
+	height: 185px;
+}
 /*--------------------------------------------------------------
 # Mastered
 --------------------------------------------------------------*/
@@ -174,11 +211,13 @@ body {
 -webkit-font-smoothing: antialiased;*/ }
 
 a {
-  color: #222222; }
+/*color: #222222; */
+color: #4dd3ff;}
 
 a:hover {
   text-decoration: none;
-  color: #333333; }
+/*color: #333333;*/
+ color: #4dffff;}
 
 section {
   padding: 65px 50px; }
@@ -1324,8 +1363,32 @@ input:-webkit-autofill:focus {
 # Media Query
 --------------------------------------------------------------*/
 
-	@media (min-width: 1px) {
+	@media (min-width: 750px) {
 		.container-fluid {
 			width: 50%;
 		}
+		.container {
+			width: 90%;
+		}
+	}
+
+	@media (min-width: 1000px) {
+		.container {
+			width: 70%;
+		}
+	}
+
+	@media (min-width: 1350px) {
+		.container {
+			width: 50%;
+		}
+	}
+
+	@media (min-width: 1650px) {
+		.container {
+			width: 40%;
+		}
+	}
+
+
 	}

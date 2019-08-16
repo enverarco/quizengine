@@ -4,9 +4,45 @@
      <title>Results | Quiz Engine | Mastered </title>
     <% include ../partials/head %>
   </head>
-  <body>
-    <p>
-      This is the results page
-    </p>
+  <body onload="generateEstimate()">
+    <div class="text-center huge-top-buffer">
+      <div class ="container-fluid">
+        <div class="theme-dark text-center">
+          <h1>Your custom website estimate</h1>
+            <img class="fadeInUp" src="../images/icons/code.svg" alt="How much does a website cost?">
+            <h1><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span><span class="estimate"> – </span><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span></h1>
+            <p class="">At Mastered, we create digital products based on needs, not requirements. Check out some <a href="https://www.mastered.ie" target="_blank">examples of our work</a>.</p>
+            <form id="myForm" class="contact-form-how-much" name="contact_how_much" method="post" >
+                <input type="hidden" name="honey">
+                <input class="form-text-area" type="text" name="name" required="" placeholder="Your name">
+                <input class="form-text-area" type="email" name="email" required="" placeholder="Your email">
+                <textarea required="" class="form-text-area describeApp" name="message" placeholder="Describe your APP"></textarea>
+                <button id="send-button" type="submit" class="btn btn-lg btn--light btnFillup anglebg" style="min-height:50px">
+                    <span class="final-cta-content final-cta-content-mobile">Get your project started</span>
+                    <span class="do-not-remove-the-span-tbear">→</span>
+                </button>
+                  </form>
+          </div>
+
+       </div>
+    </div>
+
+    <div id = "quote" class = 'top-right'>
+      <p>
+        <button id ="startBtn" type="button" class="btn btn-lg btn--light btnFillup anglebg">Get Link to Save or Share</button>
+      </p>
+    </div>
+    <div class = 'top-left'>
+      <a onclick="startQuiz()" class="giveCursor">
+        <h4>< - Start Again</h4>
+      </a>
+    </div>
+
+    <div class = 'bottom-right'>
+      <p>
+        © Copyright 2019 <a class="text-light"href="https://www.mastered.ie" target="_blank">Mastered Creative Ltd.</a> All rights reserved.
+      </p>
+    </div>
+
   </body>
 </html>
