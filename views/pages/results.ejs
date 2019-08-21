@@ -7,21 +7,63 @@
   <body onload="generateEstimate()">
     <div class="text-center huge-top-buffer">
       <div class ="container-fluid">
-        <div class="theme-dark text-center">
+        <div class="theme-dark text-center wow fadeInUp anim" data-wow-delay="0.3s">
           <h1>Your custom website estimate</h1>
             <img class="fadeInUp" src="../images/icons/code.svg" alt="How much does a website cost?">
             <h1><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span><span class="estimate"> – </span><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span></h1>
-            <p class="">At Mastered, we create digital products based on needs, not requirements. Check out some <a href="https://www.mastered.ie" target="_blank">examples of our work</a>.</p>
+            <button onclick="breakdownReveal()">Breakdown</button>
+
+            <div class="text-center" id="breakdownDIV">
+              <ul>
+                <li>Question 1 Answer: <span id="question1"></span></li><br />
+                <li>Question 2 Answer: <span id="question3"></span></li><br />
+                <li>Question 3 Answer: <span id="question5"></span></li><br />
+                <li>Question 4 Answer: <span id="question7"></span></li><br />
+                <li>Question 5 Answer: <span id="question9"></span></li><br />
+                <li>Question 6 Answer: <span id="question11"></span></li><br />
+              </ul>
+            </div>
+            <p class="container-fixed">At Mastered, we create digital products based on needs, not requirements. Check out some <a href="https://www.mastered.ie" target="_blank">examples of our work</a>.</p>
             <form id="myForm" class="contact-form-how-much" name="contact_how_much" method="post" >
                 <input type="hidden" name="honey">
-                <input class="form-text-area" type="text" name="name" required="" placeholder="Your name">
-                <input class="form-text-area" type="email" name="email" required="" placeholder="Your email">
+                <input class="form-text-area" type="text" name="fullname" for="fullname" required="" placeholder="Your name">
+                <input class="form-text-area" type="email" name="email" for="email" required="" placeholder="Your email">
                 <textarea required="" class="form-text-area describeApp" name="message" placeholder="Describe your APP"></textarea>
+                <input id="requirements" class="form-text-area" type="text" name="requirements" for="requirements" required="" placeholder="requirements" style="display: none">
+                <input id="quotePara" class="form-text-area" type="text" name="quotePara" for="requirements" required="" placeholder="quotePara" style="display: none">
                 <button id="send-button" type="submit" class="btn btn-lg btn--light btnFillup anglebg" style="min-height:50px">
                     <span class="final-cta-content final-cta-content-mobile">Get your project started</span>
                     <span class="do-not-remove-the-span-tbear">→</span>
                 </button>
                   </form>
+
+                <!--  <section class="contact__section">
+                    <div class="row">
+                      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"><h1>Get in touch</h1></div>
+                      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                        <form id="contactForm" novalidate>
+                          <div class="form-group">
+                            <label for="fullname">Your name</label>
+                            <input id="contactName" type="text" value="" name="fullname" class="form-control input" placeholder="e.g. Richard Hendricks" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block text-danger"></p>
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Your email address</label>
+                            <input id="contactEmail" type="email" value="" name="email" class="form-control input" placeholder="e.g. richard@piedpiper.com" required data-validation-required-message="Please enter your email address.">
+                            <p class="help-block text-danger"></p>
+                          </div>
+                          <div class="form-group">
+                            <label for="message">Your enquiry</label>
+                            <textarea id="contactMessage" type="text" value="" name="message" class="required form-control input" placeholder='e.g. "I would like to get a quote" or "I would like to learn more about how we can partner to build a successful product."' rows="10"></textarea>
+                          </div>
+                          <div id="contactSuccess"></div>
+                          <div class="center">
+                            <button id="contactButton" type="submit" class="btn btn-lg contact__button"> Submit </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </section> -->
           </div>
 
        </div>
@@ -38,11 +80,11 @@
       </a>
     </div>
 
-    <div class = 'bottom-right'>
+    <div class = 'bottom-righft'>
       <p>
         © Copyright 2019 <a class="text-light"href="https://www.mastered.ie" target="_blank">Mastered Creative Ltd.</a> All rights reserved.
       </p>
     </div>
-
+    <% include ../partials/footer %>
   </body>
 </html>

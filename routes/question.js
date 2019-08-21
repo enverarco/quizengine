@@ -26,16 +26,19 @@ var questions = [{
         title: "Answer 1",
         value: "200",
         imageURL: "../images/circleicons/cloudy.svg",
+        answerNo: "1",
       },
       {
         title: "Answer 2",
         value: "400",
         imageURL: "../images/circleicons/compass.svg",
+        answerNo: "2",
       },
       {
         title: "Answer 3",
         value: "300",
         imageURL: "../images/circleicons/crown.svg",
+        answerNo: "3",
       }
     ]
   },
@@ -49,11 +52,13 @@ var questions = [{
           title: "Answer 1",
           value: "300",
           imageURL: "../images/web/browser-10.svg",
+          answerNo: "1",
         },
         {
           title: "Answer 2",
           value: "500",
           imageURL: "../images/circleicons/chat.svg",
+          answerNo: "2",
         }
 
       ]
@@ -68,21 +73,25 @@ var questions = [{
             title: "Answer 1",
             value: "400",
             imageURL: "../images/circleicons/calendar.svg",
+            answerNo: "1",
           },
           {
             title: "Answer 2",
             value: "200",
             imageURL: "../images/circleicons/flask.svg",
+            answerNo: "2",
           },
           {
             title: "Answer 3",
             value: "300",
             imageURL: "../images/circleicons/idea.svg",
+            answerNo: "3",
           },
           {
             title: "Answer 4",
             value: "200",
             imageURL: "../images/circleicons/diamond.svg",
+            answerNo: "4",
           }
 
         ]
@@ -97,26 +106,31 @@ var questions = [{
               title: "Answer 1",
               value: "500",
               imageURL: "../images/web/home.svg",
+              answerNo: "1",
             },
             {
               title: "Answer 2",
               value: "100",
               imageURL: "../images/web/flag.svg",
+              answerNo: "2",
             },
             {
               title: "Answer 3",
               value: "200",
               imageURL: "../images/web/folder.svg",
+              answerNo: "3",
             },
             {
               title: "Answer 4",
               value: "300",
               imageURL: "../images/web/download.svg",
+              answerNo: "4",
             },
             {
               title: "Answer 5",
               value: "200",
               imageURL: "../images/web/laptop.svg",
+              answerNo: "5",
             }
 
           ]
@@ -131,31 +145,37 @@ var questions = [{
                 title: "Answer 1",
                 value: "200",
                 imageURL: "../images/web/profile.svg",
+                answerNo: "1",
               },
               {
                 title: "Answer 2",
                 value: "200",
                 imageURL: "../images/web/profile.svg",
+                answerNo: "2",
               },
               {
                 title: "Answer 3",
                 value: "200",
                 imageURL: "../images/web/profile.svg",
+                answerNo: "3",
               },
               {
                 title: "Answer 4",
                 value: "200",
                 imageURL: "../images/web/profile.svg",
+                answerNo: "4",
               },
               {
                 title: "Answer 5",
                 value: "200",
                 imageURL: "../images/web/profile.svg",
+                answerNo: "5",
               },
               {
                 title: "Answer 6",
                 value: "200",
                 imageURL: "../images/web/profile.svg",
+                answerNo: "5",
               }
 
             ]
@@ -170,26 +190,31 @@ var questions = [{
                   title: "Answer 1",
                   value: "200",
                   imageURL: "../images/web/profile.svg",
+                  answerNo: "1",
                 },
                 {
                   title: "Answer 2",
                   value: "200",
                   imageURL: "../images/web/profile.svg",
+                  answerNo: "2",
                 },
                 {
                   title: "Answer 3",
                   value: "200",
                   imageURL: "../images/web/profile.svg",
+                  answerNo: "3",
                 },
                 {
                   title: "Answer 4",
                   value: "200",
                   imageURL: "../images/web/profile.svg",
+                  answerNo: "4",
                 },
                 {
                   title: "Answer 5",
                   value: "200",
                   imageURL: "../images/web/profile.svg",
+                  answerNo: "5",
                 }
 
               ]
