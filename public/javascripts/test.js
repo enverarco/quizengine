@@ -1,20 +1,4 @@
-var express = require('express');
-var router = express.Router();
 
-// var questions = [
-//   question1: {
-//     title: "Question 1",
-//     answers: [
-//       {
-//         title: "Answer 1",
-//         value: "",
-//         imageURL: "",
-//       }
-//     ]
-//   },
-//   question2: {}
-//   ...
-// ]
 
 var questions = [{
     title: "How many pages will you need?",
@@ -220,13 +204,3 @@ var questions = [{
               ]
             }
 ];
-
-
-
-/* GET home page. */
-router.get('/:questionId', function(req, res, next) {
-  res.render('pages/question', {question: questions[req.params.questionId - 1], questions});
-});
-
-
-module.exports = router;

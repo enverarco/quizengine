@@ -5,82 +5,146 @@
     <% include ../partials/head %>
   </head>
   <body onload="generateEstimate()">
-    <div class="text-center huge-top-buffer">
-      <div class ="container-fluid">
-        <div class="theme-dark text-center wow fadeInUp anim" data-wow-delay="0.3s">
-          <h1>Your custom website estimate</h1>
-            <img class="fadeInUp" src="../images/icons/code.svg" alt="How much does a website cost?">
-            <h1><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span><span class="estimate"> – </span><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span></h1>
-            <button onclick="breakdownReveal()">Breakdown</button>
 
-            <div class="text-center" id="breakdownDIV">
-              <ul>
-                <li>Question 1 Answer: <span id="question1"></span></li><br />
-                <li>Question 2 Answer: <span id="question3"></span></li><br />
-                <li>Question 3 Answer: <span id="question5"></span></li><br />
-                <li>Question 4 Answer: <span id="question7"></span></li><br />
-                <li>Question 5 Answer: <span id="question9"></span></li><br />
-                <li>Question 6 Answer: <span id="question11"></span></li><br />
-              </ul>
-            </div>
-            <p class="container-fixed">At Mastered, we create digital products based on needs, not requirements. Check out some <a href="https://www.mastered.ie" target="_blank">examples of our work</a>.</p>
-            <form id="myForm" class="contact-form-how-much" name="contact_how_much" method="post" >
-                <input type="hidden" name="honey">
-                <input class="form-text-area" type="text" name="fullname" for="fullname" required="" placeholder="Your name">
-                <input class="form-text-area" type="email" name="email" for="email" required="" placeholder="Your email">
-                <textarea required="" class="form-text-area describeApp" name="message" placeholder="Describe your APP"></textarea>
-                <input id="requirements" class="form-text-area" type="text" name="requirements" for="requirements" required="" placeholder="requirements" style="display: none">
-                <input id="quotePara" class="form-text-area" type="text" name="quotePara" for="requirements" required="" placeholder="quotePara" style="display: none">
-                <button id="send-button" type="submit" class="btn btn-lg btn--light btnFillup anglebg" style="min-height:50px">
-                    <span class="final-cta-content final-cta-content-mobile">Get your project started</span>
-                    <span class="do-not-remove-the-span-tbear">→</span>
-                </button>
-                  </form>
-
-                <!--  <section class="contact__section">
-                    <div class="row">
-                      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"><h1>Get in touch</h1></div>
-                      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                        <form id="contactForm" novalidate>
-                          <div class="form-group">
-                            <label for="fullname">Your name</label>
-                            <input id="contactName" type="text" value="" name="fullname" class="form-control input" placeholder="e.g. Richard Hendricks" required data-validation-required-message="Please enter your name.">
-                            <p class="help-block text-danger"></p>
-                          </div>
-                          <div class="form-group">
-                            <label for="email">Your email address</label>
-                            <input id="contactEmail" type="email" value="" name="email" class="form-control input" placeholder="e.g. richard@piedpiper.com" required data-validation-required-message="Please enter your email address.">
-                            <p class="help-block text-danger"></p>
-                          </div>
-                          <div class="form-group">
-                            <label for="message">Your enquiry</label>
-                            <textarea id="contactMessage" type="text" value="" name="message" class="required form-control input" placeholder='e.g. "I would like to get a quote" or "I would like to learn more about how we can partner to build a successful product."' rows="10"></textarea>
-                          </div>
-                          <div id="contactSuccess"></div>
-                          <div class="center">
-                            <button id="contactButton" type="submit" class="btn btn-lg contact__button"> Submit </button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </section> -->
-          </div>
-
-       </div>
-    </div>
-
-    <div id = "quote" class = 'top-right'>
-      <p>
-        <button id ="startBtn" type="button" class="btn btn-lg btn--light btnFillup anglebg">Get Link to Save or Share</button>
-      </p>
-    </div>
     <div class = 'top-left'>
       <a onclick="startQuiz()" class="giveCursor">
         <h4>< - Start Again</h4>
       </a>
     </div>
 
-    <div class = 'bottom-righft'>
+    <div id = "quote" class = 'top-right'>
+      <button type="button" class="btn btn-lg btn--light" data-toggle="modal" data-target=".bd-example-modal-lg">Get Link to Save or Share<span class="fa fa-chevron-circle-right"></span></button>
+
+<!-- Modal -->
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="text-center modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Share Project Estimate</h5>
+              <br />
+              <p class="modal-title">
+                Save this link to review your project later or share it with a friend.
+              </p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span class="text-light fa fa-times fa-3x" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <br />
+              <input class="form-text-area" type="text" value="Copy me!" id="shareLink">
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-info" onclick="copyText()">Copy text</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center top-buffer bottom-buffer">
+      <div class ="container-fluid">
+        <div class="theme-dark text-center wow fadeInUp anim" data-wow-delay="0.3s">
+          <h1>Your custom website estimate</h1>
+            <img class="fadeInUp" src="../images/icons/code.svg" alt="How much does a website cost?">
+            <h1><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span><span class="estimate"> – </span><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span></h1>
+            <button onclick="breakdownReveal()" class="btn btn--light">Breakdown</button>
+
+
+
+            <!-- BREAKDDOWN -->
+            <div class="text-center" id="breakdownDIV">
+              <div class="container">
+              <ul>
+                <li class="bd-item clearfix">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
+                            </div>
+                            <div class="media-body">
+                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>Answer: <span id="question3"></span></p>
+                            </div>
+                        </div>
+                </li>
+                <li class="bd-item clearfix">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
+                            </div>
+                            <div class="media-body">
+                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>Answer: <span id="question7"></span></p>
+                            </div>
+                        </div>
+                </li>
+                <li class="bd-item clearfix">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
+                            </div>
+                            <div class="media-body">
+                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>Answer: <span id="question11"></span></p>
+                            </div>
+                        </div>
+                </li>
+                <li class="bd-item clearfix">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
+                            </div>
+                            <div class="media-body">
+                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>Answer: <span id="question15"></span></p>
+                            </div>
+                        </div>
+                </li>
+                <li class="bd-item clearfix">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
+                            </div>
+                            <div class="media-body">
+                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>Answer: <span id="question19"></span></p>
+                            </div>
+                        </div>
+                </li>
+                <li class="bd-item clearfix">
+                        <div class="media">
+                            <div class="pull-left">
+                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
+                            </div>
+                            <div class="media-body">
+                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>Answer: <span id="question23"></span></p>
+                            </div>
+                        </div>
+                </li>
+              </ul>
+          </div>
+            </div>
+
+            <!-- Form  -->
+            <p class="container-fixed">At Mastered, we create digital products based on needs, not requirements. Check out some <a href="https://www.mastered.ie" target="_blank">examples of our work</a>.</p>
+            <form id="myForm" class="contact-form-how-much" name="contact_how_much" method="post" >
+                  <input type="hidden" name="honey">
+                  <input class="form-text-area" type="text" name="fullname" for="fullname" required="" placeholder="Your name">
+                  <input class="form-text-area" type="email" name="email" for="email" required="" placeholder="Your email">
+                  <textarea required="" class="form-text-area describeApp" name="message" placeholder="Describe your APP"></textarea>
+                  <input id="requirements" class="form-text-area" type="text" name="requirements" for="requirements" required="" placeholder="requirements" style="display: none">
+                  <input id="quotePara" class="form-text-area" type="text" name="quotePara" for="requirements" required="" placeholder="quotePara" style="display: none">
+                  <button id="send-button" type="submit" class="btn btn-lg btn--light btnFillup anglebg" style="min-height:50px">
+                      <span class="final-cta-content final-cta-content-mobile">Get your project started</span>
+                      <span class="do-not-remove-the-span-tbear">→</span>
+                  </button>
+              </form>
+          </div>
+       </div>
+    </div>
+
+    <!-- Footer -->
+    <div class = 'bottom-right text-center'>
       <p>
         © Copyright 2019 <a class="text-light"href="https://www.mastered.ie" target="_blank">Mastered Creative Ltd.</a> All rights reserved.
       </p>

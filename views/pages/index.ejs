@@ -41,44 +41,21 @@ a list of clickable answers, a summarized total of the quote so far, current pag
 
 3. Results page should have a shareable link, that is built up using the decisions made by taking the quiz and the same quote value.
 
-
-
-array of questions
-
-
-for the legnth of answers available render those answers. for loop.
-
-for(var i=0; i<question.answers.length; i++) {
-<p>
-question.answer[i].title
-</p>
-}
-
-get the url
-and then increment the url
-
-
-function redirecttonextQuestion(questionNumber){
-if(questionNumber == 0){
-window.open("http://localhost:7000/question/3");
-console.log("question1");
-}
-else if(questionNumber == 1){
-window.open("http://localhost:7000/question/4");
-console.log("question2");
-}
-else if(questionNumber == 2){
-window.open("http://localhost:7000/question/5");
-console.log("question3");
-}
-else if(questionNumber == 4){
-window.open("http://localhost:7000/question/6");
-console.log("question4");
-}
-}
-
 if (question.answers.length == 2){
 document.getElementById("answerImage").classList.add("offset-3");
+
+ToDo List
+__________
+
+[]    encrypted url
+[]    loop generating list on results pages
+[]    make modal bigger
+[]    clean code
+[X]    mx-auto on answers
+
+
+
+
 }
 
 -->

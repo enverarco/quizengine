@@ -4,14 +4,14 @@
   <% include ../partials/head %>
 </head>
 <body onload="displayQuote()">
-  <div class="container text-center huge-top-buffer">
+  <div class="container text-center huge-top-buffer bottom-buffer">
     <h1 class = "wow fadeInDown anim" data-wow-delay="0.3s"><%= question.title %></h1>
     <p class ="wow fadeInDown anim" data-wow-delay="0.3s"><%= question.description %></p>
 
     <div class="row">
       <%   for(var i=0; i< question.answers.length; i++) { %>
-        <div class="col-lg-4 col-md-4 col-xs-4 thumb img-grow wow fadeInUp anim" data-wow-delay="0.3s">
-          <a onclick="increaseQuote(<%= question.answers[i].value %>,<%= question.pageNo %>,<%= question.answers[i].answerNo %>);" class="thumbnail" id="forward" href="<%= question.href %>">
+        <div class="mx-auto col-lg-4 col-md-4 col-xs-4 thumb img-grow wow fadeInUp anim" data-wow-delay="0.3s">
+          <a onclick="increaseQuote(<%= question.answers[i].value %>,<%= question.pageNo %>, <%= question.answers[i].answerNo %>);" class="thumbnail" id="forward" href="<%= question.href %>">
             <img id="answerImage" class="img-responsive top-buffer img-circle" src="<%= question.answers[i].imageURL %>"  alt="" height="150" width="200">
           </a>
           <div class="bottom-center"><%= question.answers[i].title %></div>
@@ -33,7 +33,7 @@
 
     <div class = 'bottom-right'>
       <h4>
-        Page: <%= question.pageNo %> out of <%= question.length %>
+        Page: <%= question.pageNo %> out of <%= questions.length %>
       </h4>
     </div>
       <% include ../partials/footer %>
