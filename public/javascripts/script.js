@@ -11,6 +11,7 @@ alert(decrypted.toString(CryptoJS.enc.Utf8)); */
 //alert("question page number is " + questions[1].pageNo );
 
 var myURL = window.location.href;
+//alert(myURL);
 
 
 var q1 = myURL.charAt(33);
@@ -99,7 +100,6 @@ function shareLink() {
   alert(window.location.href + "/" + breakdownString + "m" + quote)
 }
 
-
 function copyText() {
   var copyText = document.getElementById("shareLink"); /* Get the text field */
   copyText.select();   /* Select the text field */
@@ -127,6 +127,7 @@ function generateEstimate(){
 
 var breakdown = {total: 0};
 function increaseQuote(value,questionNo,answerNo) {
+  
   quote = parseInt(quote);
   quote +=value;
   document.getElementById("quote").innerHTML = "" + quote;

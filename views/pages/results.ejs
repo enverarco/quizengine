@@ -31,7 +31,7 @@
             </div>
             <div class="modal-body">
               <br />
-              <input class="form-text-area" type="text" value="Copy me!" id="shareLink">
+              <input class="form-text-area" type="text" value="" id="shareLink">
             </div>
             <div class="modal-footer">
               <button class="btn btn-info" onclick="copyText()">Copy text</button>
@@ -59,7 +59,7 @@
                     <li>
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
+                                    <img class="media-object" src="<%= results[i].imageURL %>" alt="" height="75" width="75">
                                 </div>
                                 <div class="media-body">
                                     <p><%= results[i].question %> </p>

@@ -3,6 +3,8 @@ var router = express.Router();
 var body = require('body-parser');
 var nodemailer = require('nodemailer');
 
+let questions = require('./questions.json');
+
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -31,210 +33,7 @@ router.post('', function(req, res, next) {
   });
 });
 
-var questions = [{
-  title: "How many pages will you need?",
-  description: "ie. how it works, contact us, team, about, press, terms, FAQ, hiring",
-  href: "http://localhost:7000/question/2",
-  pageNo: "1",
-  answers : [
-    {
-      title: "Answer 1",
-      value: "200",
-      imageURL: "../images/circleicons/cloudy.svg",
-      answerNo: "1",
-    },
-    {
-      title: "Answer 2",
-      value: "400",
-      imageURL: "../images/circleicons/compass.svg",
-      answerNo: "2",
-    },
-    {
-      title: "Answer 3",
-      value: "300",
-      imageURL: "../images/circleicons/crown.svg",
-      answerNo: "3",
-    }
-  ]
-},
-{
-  title: "Question 2",
-  description: "This is the description for question 2",
-  href: "http://localhost:7000/question/3",
-  pageNo: "2",
-  answers : [
-    {
-      title: "Answer 1",
-      value: "300",
-      imageURL: "../images/web/browser-10.svg",
-      answerNo: "1",
-    },
-    {
-      title: "Answer 2",
-      value: "500",
-      imageURL: "../images/circleicons/chat.svg",
-      answerNo: "2",
-    }
 
-  ]
-},
-{
-  title: "Question 3",
-  description: "This is the description for question 3",
-  href: "http://localhost:7000/question/4",
-  pageNo: "3",
-  answers : [
-    {
-      title: "Answer 1",
-      value: "400",
-      imageURL: "../images/circleicons/calendar.svg",
-      answerNo: "1",
-    },
-    {
-      title: "Answer 2",
-      value: "200",
-      imageURL: "../images/circleicons/flask.svg",
-      answerNo: "2",
-    },
-    {
-      title: "Answer 3",
-      value: "300",
-      imageURL: "../images/circleicons/idea.svg",
-      answerNo: "3",
-    },
-    {
-      title: "Answer 4",
-      value: "200",
-      imageURL: "../images/circleicons/diamond.svg",
-      answerNo: "4",
-    }
-
-  ]
-},
-{
-  title: "Question 4",
-  description: "This is the description for question 4",
-  href: "http://localhost:7000/question/5",
-  pageNo: "4",
-  answers : [
-    {
-      title: "Answer 1",
-      value: "500",
-      imageURL: "../images/web/home.svg",
-      answerNo: "1",
-    },
-    {
-      title: "Answer 2",
-      value: "100",
-      imageURL: "../images/web/flag.svg",
-      answerNo: "2",
-    },
-    {
-      title: "Answer 3",
-      value: "200",
-      imageURL: "../images/web/folder.svg",
-      answerNo: "3",
-    },
-    {
-      title: "Answer 4",
-      value: "300",
-      imageURL: "../images/web/download.svg",
-      answerNo: "4",
-    },
-    {
-      title: "Answer 5",
-      value: "200",
-      imageURL: "../images/web/laptop.svg",
-      answerNo: "5",
-    }
-
-  ]
-},
-{
-  title: "Question 5",
-  description: "This is the description for question 5",
-  href: "http://localhost:7000/question/6",
-  pageNo: "5",
-  answers : [
-    {
-      title: "Answer 1",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "1",
-    },
-    {
-      title: "Answer 2",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "2",
-    },
-    {
-      title: "Answer 3",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "3",
-    },
-    {
-      title: "Answer 4",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "4",
-    },
-    {
-      title: "Answer 5",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "5",
-    },
-    {
-      title: "Answer 6",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "5",
-    }
-
-  ]
-},
-{
-  title: "Question 6",
-  description: "This is the description for question 6",
-  href: "http://localhost:7000/results",
-  pageNo: "6",
-  answers : [
-    {
-      title: "Answer 1",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "1",
-    },
-    {
-      title: "Answer 2",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "2",
-    },
-    {
-      title: "Answer 3",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "3",
-    },
-    {
-      title: "Answer 4",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "4",
-    },
-    {
-      title: "Answer 5",
-      value: "200",
-      imageURL: "../images/web/profile.svg",
-      answerNo: "5",
-    }
-
-  ]
-}
-];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -244,25 +43,65 @@ router.get('/', function(req, res, next) {
 router.get('/:resultsId', function(req, res, next) {
   console.log("Results Id: ", req.params.resultsId);
   // Step1 : break out into questionid and answer id
+  var myURL = req.params.resultsId;
+  var answersRegex = /[A-Z]/gi;
+  var answersFound = myURL.match(answersRegex);
+
+  var questionRegex = /[1-99]/gi;
+  var questionsFound = myURL.match(questionRegex);
+
+  console.log("answers found is ", answersFound[1]);
+  console.log("question found is ", questionsFound);
+  //alert(myURL);
+
+
+  
+
+  /*
+  var answers = [];
+  var questions = [];
+
+  for (var i = 0; i < answersFound.length; i++) {
+    accounts[i] = answersFound[i];
+    questions[i] = questionsFound[i];
+  } */
+
+  //console.log("answers found is ", answersFound[1]);
+
+
+  var question1 = "";
+  var question2 = "";
+  var answer1 = "";
+  var answer2 = "";
+
+  //get pairs in the string
+  //
+
   // Get the values for those ids (title, value)
-  // put them into the results array
-  //let results = [];
+  //question1 =
+
+  // put them into the results array    results.push("Kiwi");
+
+
+  // let results = [];
+
 
   let results = [{
         question: "Question 1",
         answer: "This is the anser for question 1",
         value: 450,
-        imageURL: "https://blah.com"
+        imageURL: "../images/web/laptop.svg"
     },
     {
         question: "Question 2",
         answer: "This is the anser for question 2",
         value: 450,
-        imageURL: "https://blah.com"
+        imageURL: "../images/web/laptop.svg"
     }];
 
   res.render('pages/results', {results: results});
 });
+
 
 
 
