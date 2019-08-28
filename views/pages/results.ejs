@@ -54,14 +54,30 @@
             <!-- BREAKDDOWN -->
             <div class="text-center" id="breakdownDIV">
               <div class="container">
-              <ul>
+                  <ul>
+                  <%   for(var i=0; i< results.length; i++) { %>
+                    <li>
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
+                                </div>
+                                <div class="media-body">
+                                    <p><%= results[i].question %> </p>
+                                    <p><%= results[i].answer %> </p>
+                                  <!--  <p>Answer: <span id="<% i %>"></span></p> -->
+                                </div>
+                            </div>
+                    </li>
+                    <%   } %>
+                  </ul>
+          <!--   <ul>
                 <li class="bd-item clearfix">
                         <div class="media">
                             <div class="pull-left">
                                 <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
                             </div>
                             <div class="media-body">
-                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>How many pages would you like to have? </p>
                                 <p>Answer: <span id="question3"></span></p>
                             </div>
                         </div>
@@ -72,7 +88,7 @@
                                 <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
                             </div>
                             <div class="media-body">
-                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>How many pages would you like to have?</p>
                                 <p>Answer: <span id="question7"></span></p>
                             </div>
                         </div>
@@ -83,7 +99,7 @@
                                 <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
                             </div>
                             <div class="media-body">
-                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>How many pages would you like to have? </p>
                                 <p>Answer: <span id="question11"></span></p>
                             </div>
                         </div>
@@ -94,7 +110,7 @@
                                 <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
                             </div>
                             <div class="media-body">
-                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>How many pages would you like to have? </p>
                                 <p>Answer: <span id="question15"></span></p>
                             </div>
                         </div>
@@ -105,7 +121,7 @@
                                 <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
                             </div>
                             <div class="media-body">
-                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>How many pages would you like to have? </p>
                                 <p>Answer: <span id="question19"></span></p>
                             </div>
                         </div>
@@ -116,12 +132,12 @@
                                 <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
                             </div>
                             <div class="media-body">
-                                <p>How many pages would you like to have? <%= question.length %></p>
+                                <p>How many pages would you like to have? </p>
                                 <p>Answer: <span id="question23"></span></p>
                             </div>
                         </div>
                 </li>
-              </ul>
+              </ul> -->
           </div>
             </div>
 

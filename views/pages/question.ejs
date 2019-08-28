@@ -4,6 +4,7 @@
   <% include ../partials/head %>
 </head>
 <body onload="displayQuote()">
+  <% include ../partials/navbar %>
   <div class="container text-center huge-top-buffer bottom-buffer">
     <h1 class = "wow fadeInDown anim" data-wow-delay="0.3s"><%= question.title %></h1>
     <p class ="wow fadeInDown anim" data-wow-delay="0.3s"><%= question.description %></p>
