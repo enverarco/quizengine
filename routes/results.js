@@ -47,46 +47,34 @@ router.get('/:resultsId', function(req, res, next) {
   var answersRegex = /[A-Z]/gi;
   var answersFound = myURL.match(answersRegex);
 
-  var questionRegex = /[1-99]/gi;
-  var questionsFound = myURL.match(questionRegex);
+  //var questionRegex = /[1-99]/gi;
+  //var questionsFound = myURL.match(questionRegex);
 
-  console.log("answers found is ", answersFound[1]);
-  console.log("question found is ", questionsFound);
+  console.log("answers found is ", answersFound);
+  //console.log("question found is ", questionsFound);
   //alert(myURL);
-
-
-  
-
-  /*
-  var answers = [];
-  var questions = [];
+  console.log("question length is ", questions[1].answers[1].title);
 
   for (var i = 0; i < answersFound.length; i++) {
-    accounts[i] = answersFound[i];
-    questions[i] = questionsFound[i];
-  } */
+    answersFound[i] = answersFound[i].charCodeAt(0) - 97;
+  }
 
-  //console.log("answers found is ", answersFound[1]);
-
-
-  var question1 = "";
-  var question2 = "";
-  var answer1 = "";
-  var answer2 = "";
-
-  //get pairs in the string
-  //
-
-  // Get the values for those ids (title, value)
-  //question1 =
-
-  // put them into the results array    results.push("Kiwi");
+  console.log("answers found is ", answersFound);
 
 
-  // let results = [];
+  var results = [];
+  for (var i = 0; i < answersFound.length; i++) {
+      results.push( {
+        question: questions[i].title,
+        answer: questions[i].answers[answersFound[i]].title,
+        value: questions[i].answers[answersFound[i]].value,
+        imageURL: questions[i].answers[answersFound[i]].imageURL
+      } );
+  }
 
+  console.log("results is ", results);
 
-  let results = [{
+/*  let results = [{
         question: "Question 1",
         answer: "This is the anser for question 1",
         value: 450,
@@ -97,7 +85,7 @@ router.get('/:resultsId', function(req, res, next) {
         answer: "This is the anser for question 2",
         value: 450,
         imageURL: "../images/web/laptop.svg"
-    }];
+    }]; */
 
   res.render('pages/results', {results: results});
 });

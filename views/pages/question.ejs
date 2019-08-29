@@ -11,12 +11,16 @@
 
     <div class="row">
       <%   for(var i=0; i< question.answers.length; i++) { %>
-        <div class="mx-auto col-lg-4 col-md-4 col-xs-4 thumb img-grow wow fadeInUp anim" data-wow-delay="0.3s">
+        <div class="mx-auto col-lg-4 col-md-4 col-xs-4 thumb img-grow">
+          <% if (lastQuestion == true){ %>
+              <a onclick="increaseQuote(<%= question.answers[i].value %>,<%= question.pageNo %>, <%= question.answers[i].answerNo %>);" class="gotoResults" id="gotoResults" href="http://localhost:7000/results">
+            <%   } %>
+          <%  if (lastQuestion == false) { %>
           <a onclick="increaseQuote(<%= question.answers[i].value %>,<%= question.pageNo %>, <%= question.answers[i].answerNo %>);" class="thumbnail" id="forward" href="<%= question.href %>">
+            <% } %>
             <img id="answerImage" class="img-responsive top-buffer img-circle" src="<%= question.answers[i].imageURL %>"  alt="" height="150" width="200">
           </a>
           <div class="bottom-center"><%= question.answers[i].title %></div>
-
         </div>
         <%   } %>
       </div>

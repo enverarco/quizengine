@@ -6,56 +6,56 @@
     "pageNo": "1",
     "answers": [
       {
-        "title": "Answer 1",
+        "title": "3 pages",
         "value": "200",
-        "imageURL": "../images/circleicons/cloudy.svg",
+        "imageURL": "../images/circleicons/idea.svg",
         "answerNo": "1"
       },
       {
-        "title": "Answer 1",
+        "title": "5 pages",
         "value": "200",
         "imageURL": "../images/circleicons/cloudy.svg",
-        "answerNo": "1"
+        "answerNo": "2"
       }
     ]
   },
   {
-    "title": "How many pages will you need?",
+    "title": "would you like a CMS",
     "description": "ie. how it works, contact us, team, about, press, terms, FAQ, hiring",
-    "href": "http://localhost:7000/question/2",
-    "pageNo": "1",
+    "href": "http://localhost:7000/question/3",
+    "pageNo": "2",
     "answers": [
       {
-        "title": "Answer 1",
+        "title": "Yes",
         "value": "200",
-        "imageURL": "../images/circleicons/cloudy.svg",
+        "imageURL": "../images/circleicons/coding.svg",
         "answerNo": "1"
       },
       {
-        "title": "Answer 1",
+        "title": "No",
         "value": "200",
-        "imageURL": "../images/circleicons/cloudy.svg",
-        "answerNo": "1"
+        "imageURL": "../images/circleicons/map.svg",
+        "answerNo": "2"
       }
     ]
   },
   {
-    "title": "How many pages will you need?",
+    "title": "How many icons do you want",
     "description": "ie. how it works, contact us, team, about, press, terms, FAQ, hiring",
-    "href": "http://localhost:7000/question/2",
-    "pageNo": "1",
+    "href": "",
+    "pageNo": "3",
     "answers": [
       {
-        "title": "Answer 1",
+        "title": "lots",
         "value": "200",
-        "imageURL": "../images/circleicons/cloudy.svg",
+        "imageURL": "../images/circleicons/money.svg",
         "answerNo": "1"
       },
       {
-        "title": "Answer 1",
+        "title": "none",
         "value": "200",
-        "imageURL": "../images/circleicons/cloudy.svg",
-        "answerNo": "1"
+        "imageURL": "../images/circleicons/pause.svg",
+        "answerNo": "2"
       }
     ]
   }

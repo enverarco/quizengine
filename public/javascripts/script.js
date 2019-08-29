@@ -29,13 +29,13 @@ console.log("q5 is " + q5);
 console.log("q6 is " + q6);*/
 
 var quote = localStorage.getItem('quote') || 0;
-var quotestrfromURL = myURL.split('m')[1];
+var quotestrfromURL = myURL.split('-')[1];
 
-if (window.location.href.indexOf("m") > -1)
+if (window.location.href.indexOf("-") > -1)
 {
   quotestrfromURL = parseInt(quotestrfromURL, 10);
   quote = parseInt(quote);
-  quote += quotestrfromURL
+  quote = quotestrfromURL
   //alert("quote string from url is " + quotestrfromURL);
   //alert("quote is " + quote);
 }
@@ -93,11 +93,13 @@ var storedbreakdown = JSON.parse(localStorage.getItem("breakdown"));
 //...
 
 
-var shareLink = window.location.href + "/" + breakdownString + "m" + quote
-document.getElementById("shareLink").value = shareLink;
+
 
 function shareLink() {
-  alert(window.location.href + "/" + breakdownString + "m" + quote)
+  var shareLink = window.location.href //+ "/" + breakdownString + "m" + quote
+  document.getElementById("shareLink").value = shareLink;
+  console.log("share link is " + shareLink);
+  //alert(window.location.href + "/" + breakdownString + "m" + quote)
 }
 
 function copyText() {
@@ -124,10 +126,11 @@ function generateEstimate(){
   quote = Math.floor(quote);
   inputs[1].innerHTML = "" + quote;
 }
+//document.getElementById('gotoResults').href = 'http://localhost:7000/results/' + breakdownString;
 
 var breakdown = {total: 0};
 function increaseQuote(value,questionNo,answerNo) {
-  
+
   quote = parseInt(quote);
   quote +=value;
   document.getElementById("quote").innerHTML = "" + quote;
@@ -135,10 +138,21 @@ function increaseQuote(value,questionNo,answerNo) {
   console.log("question number is " + questionNo);
   console.log("answer number is " + answerNo);
 
+
+  //answerNo
+
+  /*var numberRegex = /[1-99]/gi;
+  var numberFound = myURL.match(numberRegex);
+  console.log("number found is " + numberFound)*/
+
+  //window.location.href= myURL + numberFound;
+  answerNo = (answerNo + 9).toString(36);
+  console.log("new answerNO is " +   answerNo);
   //push the image
   //puhs the question title
   questionNo.toString();
   answerNo.toString();
+  //answerNo = answerNo.charCodeAt(0) - 97;
   /*breakdown.total += value;
   breakdown[questionNo] = {answer: answerNo, value: value};
   localStorage.setItem("breakdown", JSON.stringify(breakdown));
@@ -146,9 +160,9 @@ function increaseQuote(value,questionNo,answerNo) {
 
   FormData();*/
 
-  breakdownString = breakdownString.concat('Q')
+  //breakdownString = breakdownString.concat('Q')
   breakdownString = breakdownString.concat(questionNo);
-  breakdownString = breakdownString.concat('A')
+  //breakdownString = breakdownString.concat('A')
   breakdownString = breakdownString.concat(answerNo);
   //num.toString();
   //str1.concat(str2);
@@ -156,8 +170,16 @@ function increaseQuote(value,questionNo,answerNo) {
   localStorage.setItem("breakdownString", breakdownString);
   console.log("value of breakdown string is " + breakdownString);
   //localStorage.setItem("breakdown", JSON.stringify(breakdown));
-
+  //var findlink = document.getElementById('gotoResults')
+  //findlink.href = "http://localhost:7000/results/" + breakdownString + "m" + quote;
+  var elements = document.getElementsByClassName("gotoResults");
+  for(var i=0; i<elements.length; i++) {
+    elements[i].href ="http://localhost:7000/results/" + breakdownString + "-" + quote;
 }
+document.write(names);
+}
+
+
 
 function breakdownReveal() {
 
@@ -183,6 +205,11 @@ function startQuiz() {
   location.href = "http://localhost:7000/question/1";
 }
 
+/*
+if its last question go to results otherwise increment
+
+
+*/
 
 /*
 
