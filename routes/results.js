@@ -5,6 +5,8 @@ var nodemailer = require('nodemailer');
 
 let questions = require('./questions.json');
 
+let edit = "/edit";
+
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -33,8 +35,6 @@ router.post('', function(req, res, next) {
   });
 });
 
-
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('pages/results', {question: questions});
@@ -46,22 +46,13 @@ router.get('/:resultsId', function(req, res, next) {
   var myURL = req.params.resultsId;
   var answersRegex = /[A-Z]/gi;
   var answersFound = myURL.match(answersRegex);
-
-  //var questionRegex = /[1-99]/gi;
-  //var questionsFound = myURL.match(questionRegex);
-
   console.log("answers found is ", answersFound);
-  //console.log("question found is ", questionsFound);
-  //alert(myURL);
   console.log("question length is ", questions[1].answers[1].title);
-
   for (var i = 0; i < answersFound.length; i++) {
+    //changes answers found number to letter
     answersFound[i] = answersFound[i].charCodeAt(0) - 97;
   }
-
   console.log("answers found is ", answersFound);
-
-
   var results = [];
   for (var i = 0; i < answersFound.length; i++) {
       results.push( {
@@ -71,26 +62,8 @@ router.get('/:resultsId', function(req, res, next) {
         imageURL: questions[i].answers[answersFound[i]].imageURL
       } );
   }
-
   console.log("results is ", results);
-
-/*  let results = [{
-        question: "Question 1",
-        answer: "This is the anser for question 1",
-        value: 450,
-        imageURL: "../images/web/laptop.svg"
-    },
-    {
-        question: "Question 2",
-        answer: "This is the anser for question 2",
-        value: 450,
-        imageURL: "../images/web/laptop.svg"
-    }]; */
-
-  res.render('pages/results', {results: results});
+  res.render('pages/results', {results: results, edit: edit});
 });
-
-
-
 
 module.exports = router;

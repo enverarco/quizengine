@@ -5,17 +5,14 @@
     <% include ../partials/head %>
   </head>
   <body onload="generateEstimate()">
-
     <div class = 'top-left'>
       <a onclick="startQuiz()" class="giveCursor">
         <h4>< - Start Again</h4>
       </a>
     </div>
-
     <div id = "quote" class = 'top-right'>
       <button onclick="shareLink()" type="button" class="btn btn-lg btn--light" data-toggle="modal" data-target=".bd-example-modal-lg">Get Link to Save or Share<span class="fa fa-chevron-circle-right"></span></button>
-
-<!-- Modal -->
+      <!-- Modal -->
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -40,7 +37,6 @@
         </div>
       </div>
     </div>
-
     <div class="text-center top-buffer bottom-buffer">
       <div class ="container-fluid">
         <div class="theme-dark text-center wow fadeInUp anim" data-wow-delay="0.3s">
@@ -48,9 +44,6 @@
             <img class="fadeInUp" src="../images/icons/code.svg" alt="How much does a website cost?">
             <h1><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span><span class="estimate"> – </span><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span></h1>
             <button onclick="breakdownReveal()" class="btn btn--light">Breakdown</button>
-
-
-
             <!-- BREAKDDOWN -->
             <div class="text-center" id="breakdownDIV">
               <div class="container">
@@ -59,104 +52,31 @@
                     <li>
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="media-object" src="<%= results[i].imageURL %>" alt="" height="75" width="75">
+                                    <img src="<%= results[i].imageURL %>" alt="" height="75" width="75">
                                 </div>
-                                <div class="media-body">
+                                <div>
                                     <p><%= results[i].question %> </p>
                                     <p><%= results[i].answer %> </p>
                                     <p id=value style="display: none"><%= results[i].value %></p>
-
-
-
-                                  <!--  <p>Answer: <span id="<% i %>"></span></p> -->
+                                    <a href="http://localhost:7000/question/<%= [i+1] + edit %>">(Change)</a>
                                 </div>
                             </div>
                     </li>
                     <%   } %>
                   </ul>
-          <!--   <ul>
-                <li class="bd-item clearfix">
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
-                            </div>
-                            <div class="media-body">
-                                <p>How many pages would you like to have? </p>
-                                <p>Answer: <span id="question3"></span></p>
-                            </div>
-                        </div>
-                </li>
-                <li class="bd-item clearfix">
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
-                            </div>
-                            <div class="media-body">
-                                <p>How many pages would you like to have?</p>
-                                <p>Answer: <span id="question7"></span></p>
-                            </div>
-                        </div>
-                </li>
-                <li class="bd-item clearfix">
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
-                            </div>
-                            <div class="media-body">
-                                <p>How many pages would you like to have? </p>
-                                <p>Answer: <span id="question11"></span></p>
-                            </div>
-                        </div>
-                </li>
-                <li class="bd-item clearfix">
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
-                            </div>
-                            <div class="media-body">
-                                <p>How many pages would you like to have? </p>
-                                <p>Answer: <span id="question15"></span></p>
-                            </div>
-                        </div>
-                </li>
-                <li class="bd-item clearfix">
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
-                            </div>
-                            <div class="media-body">
-                                <p>How many pages would you like to have? </p>
-                                <p>Answer: <span id="question19"></span></p>
-                            </div>
-                        </div>
-                </li>
-                <li class="bd-item clearfix">
-                        <div class="media">
-                            <div class="pull-left">
-                                <img class="media-object" src="../images/web/laptop.svg" alt="" height="75" width="75">
-                            </div>
-                            <div class="media-body">
-                                <p>How many pages would you like to have? </p>
-                                <p>Answer: <span id="question23"></span></p>
-                            </div>
-                        </div>
-                </li>
-              </ul> -->
-          </div>
+                </div>
             </div>
-
             <!-- Form  -->
             <p class="container-fixed">At Mastered, we create digital products based on needs, not requirements. Check out some <a href="https://www.mastered.ie" target="_blank">examples of our work</a>.</p>
-            <form id="myForm" class="contact-form-how-much" name="contact_how_much" method="post" >
-                  <input type="hidden" name="honey">
+            <form id="myForm" class="" name="contact_how_much" method="post" >
                   <input class="form-text-area" type="text" name="fullname" for="fullname" required="" placeholder="Your name">
                   <input class="form-text-area" type="email" name="email" for="email" required="" placeholder="Your email">
                   <textarea required="" class="form-text-area describeApp" name="message" placeholder="Describe your APP"></textarea>
                   <input id="requirements" class="form-text-area" type="text" name="requirements" for="requirements" required="" placeholder="requirements" style="display: none">
                   <input id="quotePara" class="form-text-area" type="text" name="quotePara" for="requirements" required="" placeholder="quotePara" style="display: none">
                   <button id="send-button" type="submit" class="btn btn-lg btn--light btnFillup anglebg" style="min-height:50px">
-                      <span class="final-cta-content final-cta-content-mobile">Get your project started</span>
-                      <span class="do-not-remove-the-span-tbear">→</span>
+                      <span class="">Get your project started</span>
+                      <span class="">→</span>
                   </button>
               </form>
           </div>

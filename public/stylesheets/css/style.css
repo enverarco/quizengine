@@ -34,9 +34,9 @@ li a {
 	text-decoration: none;
 }
 
-li a:hover {
+/*li a:hover {
 	color: #000036;
-}
+}*/
 
 .navbar-custom {
 	background-color: rgba(13, 11, 11, 0.3);
