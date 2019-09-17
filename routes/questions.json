@@ -8,13 +8,13 @@
       {
         "title": "3 pages",
         "value": "200",
-        "imageURL": "../images/circleicons/idea.svg",
+        "imageURL": "/images/circleicons/idea.svg",
         "answerNo": "1"
       },
       {
         "title": "5 pages",
         "value": "200",
-        "imageURL": "../images/circleicons/cloudy.svg",
+        "imageURL": "/images/circleicons/cloudy.svg",
         "answerNo": "2"
       }
     ]
@@ -28,13 +28,13 @@
       {
         "title": "Yes",
         "value": "200",
-        "imageURL": "../images/circleicons/coding.svg",
+        "imageURL": "/images/circleicons/coding.svg",
         "answerNo": "1"
       },
       {
         "title": "No",
         "value": "200",
-        "imageURL": "../images/circleicons/map.svg",
+        "imageURL": "/images/circleicons/map.svg",
         "answerNo": "2"
       }
     ]
@@ -42,19 +42,19 @@
   {
     "title": "How many icons do you want",
     "description": "ie. how it works, contact us, team, about, press, terms, FAQ, hiring",
-    "href": "",
+    "href": "http://localhost:7000/results/1a2b3b",
     "pageNo": "3",
     "answers": [
       {
         "title": "lots",
         "value": "200",
-        "imageURL": "../images/circleicons/money.svg",
+        "imageURL": "/images/circleicons/money.svg",
         "answerNo": "1"
       },
       {
         "title": "none",
         "value": "200",
-        "imageURL": "../images/circleicons/pause.svg",
+        "imageURL": "/images/circleicons/pause.svg",
         "answerNo": "2"
       }
     ]

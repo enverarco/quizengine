@@ -6,6 +6,16 @@
 
 <body onload="displayQuote(), PopulateBreakdownArray()">
   <% include ../partials/navbar %>
+    <div class = 'top-left'>
+      <a onclick="goBack()" class="giveCursor">
+        <h4>< - Previous Question</h4>
+      </a>
+    </div>
+    <div class = 'top-right'>
+      <h4>
+        Quote: <span class="estimate">€</span><span id = "quote" class="estimate">0</span>
+      </h4>
+    </div>
   <div class="container text-center huge-top-buffer bottom-buffer">
     <h1><%= question.title %></h1>
     <p><%= question.description %></p>
@@ -16,7 +26,7 @@
             <a onclick="increaseQuote(<%= question.answers[i].value %>,<%= question.pageNo %>, <%= question.answers[i].answerNo %>);" class="gotoResults" id="gotoResults" href="http://localhost:7000/results">
               <%   } %>
               <%  if (lastQuestion == false) { %>
-                <a onclick="increaseQuote(<%= question.answers[i].value %>,<%= question.pageNo %>, <%= question.answers[i].answerNo %>);" class="thumbnail" id="forward" href="<%= question.href %>">
+                <a onclick="increaseQuote(<%= question.answers[i].value %>,<%= question.pageNo %>, <%= question.answers[i].answerNo %>);" class="forward" id="forward" href="<%= question.href %>">
                   <% } %>
                   <img id="answerImage" class="img-responsive top-buffer img-circle" src="<%= question.answers[i].imageURL %>"  alt="" height="150" width="200">
                 </a>
@@ -25,21 +35,11 @@
               <%   } %>
      </div>
   </div>
-    <div class = 'top-right'>
-      <h4>
-        Quote: <span class="estimate">€</span><span id = "quote" class="estimate">0</span>
-      </h4>
-    </div>
-    <div class = 'top-left'>
-      <a onclick="goBack()" class="giveCursor">
-        <h4>< - Previous Question</h4>
-      </a>
-    </div>
-    <div class = 'bottom-right'>
-      <h4>
-        Page: <%= question.pageNo %> out of <%= questions.length %>
-      </h4>
-    </div>
+  <div class = 'bottom-right'>
+    <h4>
+      Page: <%= question.pageNo %> out of <%= questions.length %>
+    </h4>
+  </div>
     <% include ../partials/footer %>
   </body>
 </html>

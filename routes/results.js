@@ -4,7 +4,6 @@ var body = require('body-parser');
 var nodemailer = require('nodemailer');
 
 let questions = require('./questions.json');
-
 let edit = "/edit";
 
 var transporter = nodemailer.createTransport({
@@ -21,7 +20,7 @@ router.post('', function(req, res, next) {
     from: 'webenquiries@mastered.ie',
     to: 'oisin@mastered.ie',
     subject: '😍 Contact - ' + req.body.fullname,
-    html:'<h3>New Enquiry</h3><p><b>Name:</b> ' + req.body.fullname + '<br><b>Email:</b> ' + req.body.email + '<br><br><b>Description:</b> ' + req.body.message + '<br><br><b>Requirements:</b> ' + req.body.requirements  + '<br><br><b>Quote:</b> ' + req.body.quotePara + '<br></p>'
+    html:'<h3>New Enquiry</h3><p><b>Name:</b> ' + req.body.fullname + '<br><b>Email:</b> ' + req.body.email + '<br><br><b>Description:</b> ' + req.body.message + '<br><br><b>Requirements:</b>'
   };
 
   transporter.sendMail(mailOptions, function(error, info){
@@ -35,7 +34,7 @@ router.post('', function(req, res, next) {
   });
 });
 
-/* GET home page. */
+/* GET results page. */
 router.get('/', function(req, res, next) {
   res.render('pages/results', {question: questions});
 });

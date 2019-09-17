@@ -5,8 +5,6 @@ let questions = require('./questions.json');
 
 /* GET home page. */
 router.get('/:questionId', function(req, res, next) {
-//  console.log("questions is ", questions);
-//  console.log("what are we sending ", questions[req.params.questionId - 1]);
 let lastQuestion = false;
 console.log("req.params.questionId" , req.params.questionId);
 console.log("questions.length" , questions.length);
@@ -23,10 +21,8 @@ else {
   res.render('pages/question', {question: questions[req.params.questionId - 1], questions, lastQuestion: lastQuestion});
 });
 
-/* GET home page. */
+/* GET edit page. */
 router.get('/:questionId/edit', function(req, res, next)  {
-//  console.log("questions is ", questions);
-//  console.log("what are we sending ", questions[req.params.questionId - 1]);
 let lastQuestion = false;
 
 if(req.params.questionId == questions.length){
