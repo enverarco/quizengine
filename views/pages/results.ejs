@@ -11,7 +11,7 @@
       </a>
     </div>
     <div id = "quote" class = 'top-right'>
-      <button onclick="shareLink()" type="button" class="btn btn-lg btn--light" data-toggle="modal" data-target=".bd-example-modal-lg">Get Link to Save or Share<span class="fa fa-chevron-circle-right"></span></button>
+      <button onclick="shareLink()" type="button" class="change btn btn-lg btn--light" data-toggle="modal" data-target=".bd-example-modal-lg">Get Link to Save or Share<span class="fa fa-chevron-circle-right"></span></button>
       <!-- Modal -->
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -57,8 +57,8 @@
                                 <div>
                                     <p><%= results[i].question %> </p>
                                     <p><%= results[i].answer %> </p>
-                                    <p id=value style="display: none"><%= results[i].value %></p>
-                                    <a href="http://localhost:7000/question/<%= [i+1] + edit %>">(Change)</a>
+                                    <p id="value" style="display: none"><%= results[i].value %></p>
+                                    <a class="change" href="http://localhost:7000/question/<%= [i+1] + edit %>">(Change)</a>
                                 </div>
                             </div>
                     </li>

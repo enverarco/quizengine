@@ -1,6 +1,7 @@
 var myURL = window.location.href;
 var quote = localStorage.getItem('quote') || 0;
 var quotestrfromURL = myURL.split('-')[1];
+var originalQuote = quote;
 
 if (window.location.href.indexOf("-") > -1){
   quotestrfromURL = parseInt(quotestrfromURL, 10);
@@ -9,11 +10,21 @@ if (window.location.href.indexOf("-") > -1){
 
 var breakdownArray = JSON.parse(localStorage.getItem("breakdownArray")) || [];
 
+if (!breakdownArray || !breakdownArray.length || window.location.href.indexOf("-")) {
+  var change = document.getElementsByClassName("change");
+    for(var i=0; i<change.length; i++) {
+      change[i].style.display = "none"; }
+}
+
+
+
+//if breakddownarray is empty then set display of change to none
+
 //if results is in the url then the breakdown strings equals the results URL
 
 console.log("breakdownArray starts as " + JSON.stringify(breakdownArray));
 
-var endurlRegex = /[1-3]/;
+var endurlRegex = /[1-9](?!.*\d)/;
 var endurlFound = myURL.match(endurlRegex);
 console.log("endurlFound is " + endurlFound);
 endurlFound = parseInt(endurlFound);
@@ -36,7 +47,7 @@ function PopulateBreakdownArray(){
 //triggered on results page as on click on share link button
 function shareLink() {
   var shareLink = window.location.href
-  document.getElementById("shareLink").value = shareLink;
+  document.getElementById("shareLink").value = shareLink + "-" + originalQuote;
   console.log("share link is " + shareLink);
 }
 
