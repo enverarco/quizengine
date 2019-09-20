@@ -10,13 +10,11 @@ if (window.location.href.indexOf("-") > -1){
 
 var breakdownArray = JSON.parse(localStorage.getItem("breakdownArray")) || [];
 
-if (!breakdownArray || !breakdownArray.length || window.location.href.indexOf("-")) {
+if (!breakdownArray || !breakdownArray.length || window.location.href.indexOf("-")> -1) {
   var change = document.getElementsByClassName("change");
     for(var i=0; i<change.length; i++) {
       change[i].style.display = "none"; }
 }
-
-
 
 //if breakddownarray is empty then set display of change to none
 
