@@ -43,21 +43,22 @@ function PopulateBreakdownArray(){
 }
 
 //triggered on results page as on click on share link button
-function shareLink() {
+function ShareLink() {
   var shareLink = window.location.href
   document.getElementById("shareLink").value = shareLink + "-" + originalQuote;
   console.log("share link is " + shareLink);
 }
 
 //function to copy text for modal on share button
-function copyText() {
+function CopyText() {
   var copyText = document.getElementById("shareLink"); /* Get the text field */
   copyText.select();   /* Select the text field */
   document.execCommand("copy"); /* Copy the text inside the text field */
 }
 
 //displays the quote in top right corner on question.ejs
-function displayQuote() {
+//sets quote by adding all the values of the selected answers
+function DisplayQuote() {
   quote = 0;
   for (var i = 0; i < breakdownArray.length; i++) {
   quote += parseInt(breakdownArray[i].value);
@@ -66,7 +67,7 @@ function displayQuote() {
   console.log("quote is " + quote);
 }
 
-function generateEstimate(){
+function GenerateEstimate(){
   var inputs = document.getElementsByClassName("final-quote"),
   x=inputs.length;
   while(x--)
@@ -80,7 +81,7 @@ function generateEstimate(){
 //trigger when the user selects an answer, increments quote
 //appends question and answer number to breakdown string
 //and sets the href to the results page with the breakdown string for the last question
-function increaseQuote(value,questionno,answerno) {
+function IncreaseQuote(value,questionno,answerno) {
   quote = parseInt(quote);
   //quote +=value;
   document.getElementById("quote").innerHTML = "" + quote;
@@ -116,7 +117,7 @@ function increaseQuote(value,questionno,answerno) {
   console.log("stringifiedbreakdownArray is " + stringifiedbreakdownArray);
   console.log("stringifiedbreakdownArray replace is " + stringifiedbreakdownArray)
 
-  displayQuote();
+  DisplayQuote();
 
   localStorage.setItem("quote", quote);
   var stringifiedbreakdownArrayRegex = /[0-9A-Z]/g;
@@ -139,7 +140,7 @@ function increaseQuote(value,questionno,answerno) {
 }
 
 //reveals the breakdown of answers at results page
-function breakdownReveal() {
+function BreakdownReveal() {
   var breakdownReveal = document.getElementById("breakdownDIV");
     if (breakdownReveal.style.display === "none") {
       breakdownReveal.style.display = "block";
@@ -148,12 +149,12 @@ function breakdownReveal() {
     }
 }
 
-function goBack() {
+function GoBack() {
   window.history.back();
 }
 
 //Start the Quiz
-function startQuiz() {
+function StartQuiz() {
   localStorage.clear();
   location.href = "/question/1";
 }

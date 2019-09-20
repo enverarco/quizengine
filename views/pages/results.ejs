@@ -4,14 +4,14 @@
      <title>Results | Quiz Engine | Mastered </title>
     <% include ../partials/head %>
   </head>
-  <body onload="generateEstimate()">
+  <body onload="GenerateEstimate()">
     <div class = 'top-left'>
-      <a onclick="startQuiz()" class="change giveCursor">
+      <a onclick="StartQuiz()" class="change giveCursor">
         <h4>< - Start Again</h4>
       </a>
     </div>
     <div id = "quote" class = 'top-right'>
-      <button onclick="shareLink()" type="button" class="change btn btn-lg btn--light" data-toggle="modal" data-target=".bd-example-modal-lg">Get Link to Save or Share<span class="fa fa-chevron-circle-right"></span></button>
+      <button onclick="ShareLink()" type="button" class="change btn btn-lg btn--light" data-toggle="modal" data-target=".bd-example-modal-lg">Get Link to Save or Share<span class="fa fa-chevron-circle-right"></span></button>
       <!-- Modal -->
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -31,7 +31,7 @@
               <input class="form-text-area" type="text" value="Copy text!" id="shareLink">
             </div>
             <div class="modal-footer">
-              <button class="btn btn-info" onclick="copyText()">Copy text</button>
+              <button class="btn btn-info" onclick="CopyText()">Copy text</button>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
           <h1>Your custom website estimate</h1>
             <img class="fadeInUp" src="../images/icons/code.svg" alt="How much does a website cost?">
             <h1><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span><span class="estimate"> – </span><span class="estimate">€</span><span id = "quote" class="estimate final-quote">0</span></h1>
-            <button onclick="breakdownReveal()" class="btn btn--light">Breakdown</button>
+            <button onclick="BreakdownReveal()" class="btn btn--light">Breakdown</button>
             <!-- BREAKDDOWN -->
             <div class="text-center" id="breakdownDIV">
               <div class="container">
